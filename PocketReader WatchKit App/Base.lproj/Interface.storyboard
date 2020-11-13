@@ -1,15 +1,71 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17506" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17500"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="PocketReader_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="Name Book" id="YSu-2I-hNn"/>
+                        <group width="1" alignment="left" layout="vertical" id="osz-Br-0NM">
+                            <items>
+                                <imageView alignment="center" image="42351562-vladislav-gaydukevich-18508746-rasshirit-soznanie-legalno" id="jd5-mF-RXA"/>
+                                <label alignment="left" text="Author:" id="ZHp-C6-JUT">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label alignment="left" text="Name name" numberOfLines="0" id="SKz-Pq-Ucn"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" spacing="10" id="1gB-a0-25Q">
+                            <items>
+                                <label alignment="left" text="Year:" id="3EH-CE-HmL">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label alignment="left" text="2020" numberOfLines="0" id="O4N-Q5-h9W"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" spacing="10" id="hWH-ik-eZ0">
+                            <items>
+                                <label alignment="left" text="Page: " id="cjb-0o-HxZ">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label alignment="left" text="600" numberOfLines="0" id="PNK-Gj-dXb"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="PFx-tK-S5n">
+                            <items>
+                                <label alignment="left" text="Description:  " id="lUs-DM-7xK">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <button alignment="left" id="pMq-Ha-XPA">
+                                    <group key="contentGroup" width="1" alignment="left" id="GBH-26-aeS">
+                                        <items>
+                                            <label alignment="left" text="Name name" numberOfLines="4" id="CWq-gw-LgR">
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                </button>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Choise Book" id="FIG-3W-lC6">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="18"/>
+                        </button>
+                    </items>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="19" y="-20"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="42351562-vladislav-gaydukevich-18508746-rasshirit-soznanie-legalno" width="415" height="589"/>
+    </resources>
 </document>
