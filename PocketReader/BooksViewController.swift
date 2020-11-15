@@ -146,6 +146,9 @@ extension BooksViewController {
         tableView = UITableView(frame: .zero, style: UITableView.Style.grouped)
         // wkly4aem režum redaktirowanija
         tableView.setEditing(true, animated: true)
+        tableView.delegate = self
+        // wubor ja4eek tablicu w režume redaktirowanija
+        tableView.allowsSelectionDuringEditing = true
         tableView.translatesAutoresizingMaskIntoConstraints = false
         title = "PocketReader"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -196,4 +199,20 @@ extension BooksViewController {
     }
 }
 
+extension BooksViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if indexPath.section == 0 {
+            return .delete
+        } else {
+            return .insert
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let bookItem = self.dataSource.itemIdentifier(for: indexPath) else { return }
+        
+        print(bookItem.name)
+    }
+}
 
