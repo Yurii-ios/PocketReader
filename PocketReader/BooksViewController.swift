@@ -93,6 +93,22 @@ class BooksViewController: UIViewController {
              //   return ""
             }
         }
+        
+        func genreType() -> GenreType {
+            switch self {
+            case .activeNow:
+                return .activeNow
+            case .psychology:
+                return .psychology
+            case .children:
+                return .children
+            case .novels:
+                return .novels
+            case .detectives:
+                return .detectives
+            }
+        }
+        
         }
     
     var tableView: UITableView!
@@ -190,14 +206,38 @@ extension BooksViewController {
         
         override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             if editingStyle == .insert {
-                
+                let destinationIndexPath = IndexPath(row: 0, section: 0)
+                // proweriaem sys4estwyet li ja4ejka na kotoryjy nažali
+                guard let sourceIdentifire = itemIdentifier(for: indexPath) else { return }
+                let destinationIdentifire = itemIdentifier(for: destinationIndexPath)
+                var snapshot = self.snapshot()
+                if let destinationIdentifire = destinationIdentifire {
+                    snapshot.deleteItems([sourceIdentifire])
+                    snapshot.insertItems([sourceIdentifire], beforeItem: destinationIdentifire)
+                    apply(snapshot)
+                } else {
+                    let destinationSectionIdentifier = snapshot.sectionIdentifiers[destinationIndexPath.section]
+                    snapshot.deleteItems([sourceIdentifire])
+                    snapshot.appendItems([sourceIdentifire], toSection: destinationSectionIdentifier)
+                    apply(snapshot)
+                }
             }
             if editingStyle == .delete {
-                
+                guard let sourceIdentifier = itemIdentifier(for: indexPath) else { return }
+                var snapshot = self.snapshot()
+                for section in snapshot.sectionIdentifiers {
+                    if section.genreType() == sourceIdentifier.genre {
+                        snapshot.deleteItems([sourceIdentifier])
+                        snapshot.appendItems([sourceIdentifier], toSection: section)
+                        apply(snapshot)
+                    }
+                }
             }
         }
     }
 }
+
+//MARK: - UITableViewDelegate
 
 extension BooksViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
