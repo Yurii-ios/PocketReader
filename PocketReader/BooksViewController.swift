@@ -144,9 +144,10 @@ extension BooksViewController {
         view.backgroundColor = .systemBackground
         
         tableView = UITableView(frame: .zero, style: UITableView.Style.grouped)
+        // wkly4aem režum redaktirowanija
+        tableView.setEditing(true, animated: true)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         title = "PocketReader"
-        tableView.backgroundColor = .brown
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 }
@@ -179,5 +180,20 @@ extension BooksViewController {
                 return nil
             }
         }
+        
+        override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+            return true
+        }
+        
+        override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .insert {
+                
+            }
+            if editingStyle == .delete {
+                
+            }
+        }
     }
 }
+
+
