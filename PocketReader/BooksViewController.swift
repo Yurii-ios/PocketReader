@@ -209,7 +209,9 @@ extension BooksViewController {
                 let destinationIndexPath = IndexPath(row: 0, section: 0)
                 // proweriaem sys4estwyet li ja4ejka na kotoryjy nažali
                 guard let sourceIdentifire = itemIdentifier(for: indexPath) else { return }
+                // sozdaem element kotoruj peremes4aem
                 let destinationIdentifire = itemIdentifier(for: destinationIndexPath)
+                // fiksiryem izmenenija
                 var snapshot = self.snapshot()
                 if let destinationIdentifire = destinationIdentifire {
                     snapshot.deleteItems([sourceIdentifire])
@@ -223,8 +225,10 @@ extension BooksViewController {
                 }
             }
             if editingStyle == .delete {
+                // kniga kotoryjy chotim ydalit
                 guard let sourceIdentifier = itemIdentifier(for: indexPath) else { return }
                 var snapshot = self.snapshot()
+                // opredeliaem kydawozwras4at ydalennyjy knigy
                 for section in snapshot.sectionIdentifiers {
                     if section.genreType() == sourceIdentifier.genre {
                         snapshot.deleteItems([sourceIdentifier])
@@ -252,7 +256,8 @@ extension BooksViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let bookItem = self.dataSource.itemIdentifier(for: indexPath) else { return }
         
-        print(bookItem.name)
+        let detailViewController = DetailViewController()
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 

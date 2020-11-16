@@ -21,6 +21,8 @@
 		F15537C9255EE1F600831CFF /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15537C8255EE1F600831CFF /* ExtensionDelegate.swift */; };
 		F15537CB255EE1F600831CFF /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15537CA255EE1F600831CFF /* ComplicationController.swift */; };
 		F15537CD255EE1F700831CFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F15537CC255EE1F700831CFF /* Assets.xcassets */; };
+		F1F180032562B3A8003EC456 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F180022562B3A8003EC456 /* DetailViewController.swift */; };
+		F1F180082562C421003EC456 /* StackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F180072562C420003EC456 /* StackView + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		F15537CA255EE1F600831CFF /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		F15537CC255EE1F700831CFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F15537CE255EE1F700831CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1F180022562B3A8003EC456 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F1F180072562C420003EC456 /* StackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 				F15537A1255EE1F400831CFF /* AppDelegate.swift */,
 				F15537A3255EE1F400831CFF /* SceneDelegate.swift */,
 				F15537A5255EE1F400831CFF /* BooksViewController.swift */,
+				F1F180022562B3A8003EC456 /* DetailViewController.swift */,
+				F1F180072562C420003EC456 /* StackView + Extension.swift */,
 				F15537A7255EE1F400831CFF /* Main.storyboard */,
 				F15537AA255EE1F500831CFF /* Assets.xcassets */,
 				F15537AC255EE1F500831CFF /* LaunchScreen.storyboard */,
@@ -294,6 +300,8 @@
 				F15537A6255EE1F400831CFF /* BooksViewController.swift in Sources */,
 				F15537A2255EE1F400831CFF /* AppDelegate.swift in Sources */,
 				F15537A4255EE1F400831CFF /* SceneDelegate.swift in Sources */,
+				F1F180032562B3A8003EC456 /* DetailViewController.swift in Sources */,
+				F1F180082562C421003EC456 /* StackView + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
